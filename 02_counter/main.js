@@ -10,7 +10,7 @@
 // const result1 = document.querySelectorAll("h1")[0];
 // const plusButton = document.querySelector("button");
 const resultH1 = document.getElementById("result");
-const plusButton = document.getElementsByClassName("plusButton")[0];
+//const plusButton = document.getElementsByClassName("plusButton")[0];
 // const plusButton = document.querySelector(".plusButton")[0];
 
 let count = 0;
@@ -19,7 +19,11 @@ let count = 0;
 //     resultH1.innerHTML = count;
 // }); //()<-에 함수를 넣는 다면? ex)plus는 함수! ()없는 이유? => return값을 나오기 떄문에 언디파인드가 나옴
 
-plusButton.onclick = ()=>{
+/*plusButton.onclick = ()=>{
     count++;
     resultH1.innerHTML = count;
-};
+}; */
+function plus(){
+    count++;
+    resultH1.innerHTML = count;
+}
