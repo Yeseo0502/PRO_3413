@@ -6,3 +6,7 @@ vanilla HTML, JavaScript
 npm create vite@latest.
 ```
 ### Counter App 😪
+- `useState(초기값)`
+- `onClick={()=>set함수(바꿀값)}`
+- `onClick={()=>set함수((이전 state) => 이전state + 1)}`
+- `onClick={함수이름}`
