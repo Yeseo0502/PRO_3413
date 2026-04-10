@@ -8,5 +8,5 @@ import TodoListApp from './TodoListApp'
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <TodoListApp />
-  </StrictMode>,
+  </StrictMode>
 )
