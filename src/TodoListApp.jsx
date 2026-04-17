@@ -7,13 +7,31 @@ import TodoHeader from './components/TodoHeader.jsx';
 import TodoAdder from './components/TodoAdder.jsx';
 // import TodoItem from './components/TodoItem.jsx';
 import TodoList from './components/TodoList.jsx';
-
+class Todo{
+    constructor(text){
+        this.id = Date.now(); //id: 고유의 값. new Date().getTime()
+        this.text = text; //할일 내용
+        this.isCompleted = false; //완료 여부: 미완
+    }
+}
 function TodoListApp(){
+    const [todos, setTodos] = useState([]); //할일 목록 저장 state, 기본값: 빈 list
+    function addTodo(text){
+        setTodos((todos)=> [
+            //이전todos 가져오자
+            //하나씩 꺼내서 새로운 리스트 만들자
+            ...todos,
+            //뒤에 new Todo 만들어서 추가하자
+            new Todo(text)
+        ]);
+    }
+    //위에있는 소스 코드 한줄 코딩
+    //function addTodo(text) { setTodos((todos) => [...todos,new Todo(text)])}
     return(
         <>
         <div className="todo">
             <TodoHeader />
-            <TodoAdder />
+            <TodoAdder addTodo={addTodo}/>
             <TodoList />
         </div>
         </>
