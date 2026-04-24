@@ -18,9 +18,9 @@ const TODOS_STORAGE_KEY = "todos";
 function TodoListApp(){
     function initTodos(){
         const savedTodos= localStorage.getItem(TODOS_STORAGE_KEY);
-        return
+        return savedTodos ? JSON.parse(savedTodos) : [];
     }
-    const [todos, setTodos] = useState([]); //할일 목록 저장 state, 기본값: 빈 list
+    const [todos, setTodos] = useState(initTodos); //할일 목록 저장 state, 기본값: 빈 list
     
     //todos 변경될 때, 저장하자. useEffect(명령어, [변할값])
     useEffect(() => {
