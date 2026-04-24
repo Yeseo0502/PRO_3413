@@ -36,6 +36,14 @@ function TodoListApp(){
         )
     }
 
+    function editTodo(id,newText){
+        //todos에서 하나씩 꺼내어 todo. id가 같으면 text를 newText로 대입하다.
+        setTodos((todos)=>
+            todos.map((todo) =>
+                todo.id === id ? {...todo, text: newText} : todo
+            )
+        )
+    }
     function deleteTodo(id){
         //todos 하나씩 꺼내어 todo의 id가 다른 todo만 남기자
         setTodos((todos) =>
@@ -47,7 +55,7 @@ function TodoListApp(){
         <div className="todo">
             <TodoHeader />
             <TodoAdder addTodo={addTodo}/>
-            <TodoList todos={todos} toggleTodo={toggleTodo} deleteTodo={deleteTodo}/>
+            <TodoList todos={todos} toggleTodo={toggleTodo} deleteTodo={deleteTodo} editTodo={editTodo}/>
         </div>
         </>
     );
